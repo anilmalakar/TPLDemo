@@ -11,8 +11,8 @@ namespace TPLDemo
     {
         int taskCompleted = 0, numOfTasks = 500;
         List<Task> tasks = new List<Task>();
-        // Lets use only half of our system resources
-        int processors = Environment.ProcessorCount;
+        // Let's use only half of our system resources
+        int processors = Environment.ProcessorCount/2;
         public void DoResourceConsumingTaskCaller()
         {
             Console.WriteLine($"Starting Resource Consuming Limited tasks- {DateTime.Now}");
