@@ -15,14 +15,14 @@ namespace TPLDemo
                 many task thinking it will do work in background, it will be havoc.
              */
 
-            //var badDesign = new BadDesignManyTasks();
-            //badDesign.DoResourceConsumingTaskCaller();
+            var badDesign = new BadDesignManyTasks();
+            badDesign.DoResourceConsumingTaskCaller();
 
             //Comment Bad design and Uncomment below good design and see CPU usage and
-            //threads counts.
+            //threads counts and see the peformance gain.
 
-            var goodDesign = new GoodDesignManyTasks();
-            goodDesign.DoResourceConsumingTaskCaller();
+            //var goodDesign = new GoodDesignManyTasks();
+            //goodDesign.DoResourceConsumingTaskCaller();
         }
 
 

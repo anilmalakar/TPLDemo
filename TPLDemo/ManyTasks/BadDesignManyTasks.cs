@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace TPLDemo
 {
+    /// <summary>
+    /// This class 500 tasks at once for cpu intensive work
+    /// </summary>
     public class BadDesignManyTasks : IDesignManyTasks
     {
         int numOfTasks = 500;

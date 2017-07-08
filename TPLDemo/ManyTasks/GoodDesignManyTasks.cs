@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace TPLDemo
 {
+    /// <summary>
+    /// This class creates only limited task and create new when previous completed.
+    /// </summary>
     public class GoodDesignManyTasks : IDesignManyTasks
     {
         int taskCompleted = 0, numOfTasks = 500;
@@ -34,9 +37,11 @@ namespace TPLDemo
             while (taskCompleted <= numOfTasks)
             {
                 var task = Task.WaitAny(tasks.ToArray());
+                //if tasks completed remove it from active list
                 tasks.RemoveAt(task);
                 taskCompleted++;
-
+                // compare if task completed still less than num of tasks, if so create new
+                // and add to task list
                 if (taskCompleted < numOfTasks)
                 {
                     var t = CreateTask();
